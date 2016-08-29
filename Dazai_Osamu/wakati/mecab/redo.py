@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import commands as cmd
+import checkhinsi_Copy8 as ch
 
 # 繰り返し作業するオブジェクトをまとめたもの
 cataloga = cmd.getstatusoutput('cat ls.tmp')
@@ -10,6 +11,8 @@ out = open("/local/home/hina/gitrepos/EddCorpus/Dazai_Osamu/wakati/mecab/Dazai_O
 
 # redo
 for x in catalog:
-    a = open(x, "r")
-    out.write(a.read()) 
+    a = x + ".wID"
+    b = x + ".words"
+    c = x + ".phrase"
+    ch.do(x, a, b, c) 
    
